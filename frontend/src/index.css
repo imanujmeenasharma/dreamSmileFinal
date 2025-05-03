@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+*{
+    font-family: 'Urbanist', sans-serif;
+}
+
+.gilroy{
+    font-family: Gilroy;
+}
+
+.hide-scroller::-webkit-scrollbar{
+    display: none;
+}
