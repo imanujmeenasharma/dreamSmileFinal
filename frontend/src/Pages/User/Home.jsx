@@ -356,31 +356,32 @@ const Home = () => {
           <>
             {/* Hero Section */}
             <div className="relative bg-transparent h-[90vh] w-full pt-14 lg:pt-0">
-              <div className="z-30 bg-transparent relative h-full w-full flex items-center flex-col md:flex-row  gap-10 lg:gap-0">
-                <div className="h-full bg-transparent flex flex-col justify-center w-full md:w-1/2 px-5 lg:px-20">
-                  <h1 className="text-5xl md:text-6xl lg:text-7xl tracking-tighter leading-none font-bold mb-6">
+              <div className="z-30 bg-transparent relative h-full w-full flex flex-col md:flex-row items-center gap-6 lg:gap-0">
+                <div className="bg-transparent flex flex-col justify-center w-full md:w-1/2 px-4 sm:px-6 lg:px-20 py-8 md:py-0">
+                  <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tighter leading-tight font-bold mb-4 md:mb-6">
                     {images[currentIndex].title}
                   </h1>
-                  <p className="text-gray-600 mb-8 text-base md:text-lg lg:text-xl">
+                  <p className="text-gray-600 mb-6 md:mb-8 text-sm sm:text-base md:text-lg lg:text-xl">
                     {images[currentIndex].desc}
                   </p>
-                  <div>
-                    <button className="border-2 inline-block px-8 py-2 rounded-full cursor-pointer text-sm md:text-base lg:text-lg">
+                  <div className="mb-8 md:mb-0">
+                    <button className="border-2 inline-block px-6 sm:px-8 py-2 rounded-full cursor-pointer text-sm md:text-base lg:text-lg hover:bg-black hover:text-white hover:border-black transition-colors duration-300">
                       Book An Appointment
                     </button>
                   </div>
                 </div>
-                <div className="w-full overflow-hidden md:w-1/2 h-[40vh] lg:h-full">
+                <div className="w-full md:w-1/2 h-[60vh] md:h-[90vh] overflow-hidden">
                   <div
-                    className="flex transition-transform duration-700 ease-in-out"
+                    className="flex transition-transform duration-700 ease-in-out h-full"
                     style={{ transform: `translateX(-${currentIndex * 100}%)` }}
                   >
                     {images.map((src, idx) => (
-                      <div key={idx} className="h-screen w-full flex-shrink-0">
+                      <div key={idx} className="w-full flex-shrink-0 h-full">
                         <img
                           src={src.src}
                           alt={`Slide ${idx + 1}`}
-                          className="h-full w-full object-cover"
+                          className="h-full w-full object-cover object-center"
+                          loading="lazy"
                         />
                       </div>
                     ))}
