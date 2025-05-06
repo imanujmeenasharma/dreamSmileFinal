@@ -519,34 +519,34 @@ const Home = () => {
             </div>
 
             {/* Why People Love Section */}
-            <div className="container mx-auto  p-5 lg:p-20">
-              <div className="">
-                <div>
-                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 lg:mb-4">
+            <div className="container mx-auto p-5 lg:p-20">
+              <div className="space-y-8">
+                <div className="max-w-full">
+                  <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
                     Why People love Dream Smile
                   </h1>
-                  <p className="text-gray-700 w-[50%] text-sm md:text-lg lg:text-sm leading-relaxed mb-4">
+                  <p className="text-gray-700 w-full sm:w-3/4 md:w-2/3 lg:w-1/2 text-sm md:text-base lg:text-sm leading-relaxed mb-4">
                     At Dream Smile, we believe that a confident smile can change lives. Our patients love us because we combine advanced dental technology with a warm, friendly approach that makes every visit comfortable and stress-free. From painless treatments to personalized care, we focus on delivering beautiful results that last.
                   </p>
-                  <button className="bg-black cursor-pointer text-white px-8 py-4 text-sm md:text-md lg:text-lg rounded-full hover:bg-gray-800 transition mb-8">
+                  <button className="bg-black cursor-pointer text-white px-6 sm:px-8 py-3 sm:py-4 text-sm md:text-md lg:text-lg rounded-full hover:bg-gray-800 transition mb-8">
                     See more reviews
                   </button>
                 </div>
-                <div className="flex items-center justify-between">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
                   {testimonials.map((item, index) => (
                     <div
-                      key={item}
+                      key={index}
                       className="relative cursor-pointer rounded-2xl overflow-hidden bg-gray-100 shadow-lg border border-gray-400"
                     >
                       <video
                         ref={el => videoRefs.current[index] = el}
                         src={item.video}
-                        className="w-full h-[200px] md:h-[350px] lg:h-[550px] object-cover"
+                        className="w-full h-[200px] md:h-[250px] lg:h-[300px] object-cover"
                         onClick={() => handleVideoClick(index)}
                       />
                       <button
                         ref={el => playButtonRefs.current[index] = el}
-                        className="absolute top-1/2 left-1/2 transform -translate-x-1/2 flex items-center justify-center -translate-y-1/2 text-3xl bg-white h-20 w-20 rounded-full"
+                        className="absolute top-1/2 left-1/2 transform -translate-x-1/2 flex items-center justify-center -translate-y-1/2 text-xl sm:text-2xl md:text-3xl bg-white h-12 w-12 sm:h-16 sm:w-16 md:h-20 md:w-20 rounded-full"
                       >
                         <FaPlay />
                       </button>
