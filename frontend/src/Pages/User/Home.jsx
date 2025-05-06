@@ -194,6 +194,14 @@ const Home = () => {
   {
     name: "Patient-2",
     video: "./Testimonial/testimonial-2.mp4",
+  },
+  {
+    name: "Patient-3",
+    video: "./Testimonial/testimonial-1.mp4",
+  },
+  {
+    name: "Patient-4",
+    video: "./Testimonial/testimonial-4.mp4",
   }
   ]
   const comfortableTreatment = [{
@@ -339,7 +347,7 @@ const Home = () => {
         autoPlay
         loop
         muted
-        className="w-full h-full object-cover fixed top-0 left-0 -z-10 opacity-10"
+        className="w-full h-full object-cover fixed top-0 left-0 -z-10 opacity-25"
       />
 
       {/* Main content */}
@@ -347,7 +355,7 @@ const Home = () => {
         {location.pathname === "/" && (
           <>
             {/* Hero Section */}
-            <div className="relative bg-transparent min-h-screen lg:h-[90vh] w-full pt-14 lg:pt-0">
+            <div className="relative bg-transparent h-[90vh] w-full pt-14 lg:pt-0">
               <div className="z-30 bg-transparent relative h-full w-full flex items-center flex-col md:flex-row  gap-10 lg:gap-0">
                 <div className="h-full bg-transparent flex flex-col justify-center w-full md:w-1/2 px-5 lg:px-20">
                   <h1 className="text-5xl md:text-6xl lg:text-7xl tracking-tighter leading-none font-bold mb-6">
@@ -362,7 +370,7 @@ const Home = () => {
                     </button>
                   </div>
                 </div>
-                <div className="w-full overflow-hidden md:w-1/2 h-[60vh] lg:h-full">
+                <div className="w-full overflow-hidden md:w-1/2 h-[40vh] lg:h-full">
                   <div
                     className="flex transition-transform duration-700 ease-in-out"
                     style={{ transform: `translateX(-${currentIndex * 100}%)` }}
@@ -511,20 +519,19 @@ const Home = () => {
 
             {/* Why People Love Section */}
             <div className="container mx-auto  p-5 lg:p-20">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+              <div className="">
                 <div>
-                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 lg:mb-8">
+                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 lg:mb-4">
                     Why People love Dream Smile
                   </h1>
-                  <p className="text-gray-700 text-base md:text-lg lg:text-xl leading-relaxed mb-8">
+                  <p className="text-gray-700 w-[50%] text-sm md:text-lg lg:text-sm leading-relaxed mb-4">
                     At Dream Smile, we believe that a confident smile can change lives. Our patients love us because we combine advanced dental technology with a warm, friendly approach that makes every visit comfortable and stress-free. From painless treatments to personalized care, we focus on delivering beautiful results that last.
-
                   </p>
-                  <button className="bg-black cursor-pointer text-white px-8 py-4 text-sm md:text-md lg:text-lg rounded-full hover:bg-gray-800 transition">
+                  <button className="bg-black cursor-pointer text-white px-8 py-4 text-sm md:text-md lg:text-lg rounded-full hover:bg-gray-800 transition mb-8">
                     See more reviews
                   </button>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
+                <div className="flex items-center justify-between">
                   {testimonials.map((item, index) => (
                     <div
                       key={item}
@@ -533,7 +540,7 @@ const Home = () => {
                       <video
                         ref={el => videoRefs.current[index] = el}
                         src={item.video}
-                        className="w-full h-[200px] md:h-[350px] lg:h-[450px] object-cover"
+                        className="w-full h-[200px] md:h-[350px] lg:h-[550px] object-cover"
                         onClick={() => handleVideoClick(index)}
                       />
                       <button
