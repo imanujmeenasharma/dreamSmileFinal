@@ -1,5 +1,6 @@
 import React from 'react'
 import { RiToothFill } from "react-icons/ri";
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
@@ -8,9 +9,9 @@ const Footer = () => {
             <div className="bg-[#021D18] text-white py-16">
                 <div className="container mx-auto px-6 text-center">
                     <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8">Book Appointment Today</h2>
-                    <button className="bg-white text-black px-9 py-4 rounded-full hover:bg-gray-100 font-bold text-xl">
+                    <Link to="/contact" className="bg-white text-black px-9 py-4 rounded-full hover:bg-gray-100 font-bold text-xl">
                         Book An Appointment
-                    </button>
+                    </Link>
                 </div>
             </div>
             <footer className="bg-[#021D18] text-white py-5 lg:py-16">

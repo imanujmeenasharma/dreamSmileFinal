@@ -6,11 +6,12 @@ import Gallery from '../Pages/User/Gallery'
 import Contact from '../Pages/User/Contact'
 import Navbar from '../Components/Navbar'
 import Footer from '../Components/Footer'
-
+import ScrollToTop from '../Components/ScrollToTop'
 const UserRoutes = () => {
     return (
         <>
             <Navbar />
+            <ScrollToTop />
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/about" element={<About />} />

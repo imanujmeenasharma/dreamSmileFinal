@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 import { RiToothFill } from "react-icons/ri";
 import { IoMdClose } from "react-icons/io";
@@ -125,9 +125,9 @@ function SpecialOffers({ closePopup }) {
                     <p className="font-medium">{item.validDate}</p>
                     <p className="text-gray-600 text-sm">{item.description}</p>
                   </div>
-                  <button className="w-full cursor-pointer bg-black text-white py-3 rounded-lg mt-6 hover:bg-black/90 transition-colors">
+                  <Link to="/contact" className="w-full cursor-pointer bg-black text-white py-3 rounded-lg mt-6 hover:bg-black/90 transition-colors">
                     Book An Appointment
-                  </button>
+                  </Link>
                 </div>
               </div>
             ))}
@@ -145,23 +145,23 @@ const Home = () => {
   const images = [
     {
       src: "./carouselImages/1.JPG",
-      title: "Comprehensive Dental Service",
-      desc: "We offer a full spectrum of dental care tailored to meet your unique needs—all under one roof.",
+      title: "People Who Make Dream Smile Shine",
+      desc: "Our team of experienced dentists and hygienists are dedicated to providing you with the highest quality dental care. We are committed to your comfort and satisfaction.",
     },
     {
-      src: "./carouselImages/2.JPG",
+      src: "./carouselImages/3.JPG",
       title: "Advanced Dental Technology",
       desc: "We utilize state-of-the-art dental technology to deliver faster, safer, and more precise treatments. From digital X-rays and intraoral scanners to laser dentistry and 3D imaging.",
     },
     {
-      src: "./carouselImages/3.JPG",
+      src: "./carouselImages/4.JPG",
       title: "Preventive Care & Hygiene",
       desc: "Healthy smiles start with prevention. Our preventive care programs focus on regular cleanings, thorough exams, and personalized oral hygiene guidance to help you avoid dental issues before they begin.",
     },
     {
-      src: "./carouselImages/4.JPG",
-      title: "Cosmetic Dentistry Solutions",
-      desc: "Transform your smile with our customized cosmetic dentistry services. Whether you're looking to brighten your teeth, close gaps, or enhance overall symmetry, we offer a range of treatments including teeth whitening, veneers, bonding, and more—all designed to boost your confidence and bring out your best smile.",
+      src: "./carouselImages/2.JPG",
+      title: "Smiles Crafted by Certified Professionals",
+      desc: "Our team of experienced dentists and hygienists are dedicated to providing you with the highest quality dental care. We are committed to your comfort and satisfaction.",
     },
   ];
   const carouselData = [{
@@ -365,9 +365,9 @@ const Home = () => {
                     {images[currentIndex].desc}
                   </p>
                   <div className="mb-8 md:mb-0">
-                    <button className="border-2 inline-block px-6 sm:px-8 py-2 rounded-full cursor-pointer text-sm md:text-base lg:text-lg hover:bg-black hover:text-white hover:border-black transition-colors duration-300">
+                    <Link to="/contact" className="border-2 inline-block px-6 sm:px-8 py-2 rounded-full cursor-pointer text-sm md:text-base lg:text-lg hover:bg-black hover:text-white hover:border-black transition-colors duration-300">
                       Book An Appointment
-                    </button>
+                    </Link>
                   </div>
                 </div>
                 <div className="w-full md:w-1/2 h-[60vh] md:h-[90vh] overflow-hidden">
@@ -465,9 +465,9 @@ const Home = () => {
                     I am a passionate dentist committed to providing personalized dental care with a gentle touch. With years of experience in diagnosing and treating, my goal is not just to relieve pain, but to restore confidence and bring smiles to my patients’ faces.
                   </p>
                   <div>
-                    <button className="bg-black font-medium cursor-pointer text-white inline-block px-10 py-2 rounded-xl hover:bg-gray-800">
+                    <Link to="/contact" className="bg-black font-medium cursor-pointer text-white inline-block px-10 py-2 rounded-xl hover:bg-gray-800">
                       Book an Appointment
-                    </button>
+                    </Link>
                   </div>
                   <p className="text-sm text-gray-600">
                     Whether it’s a routine check-up, cosmetic enhancement, or a complex procedure, I strive to make every visit comfortable and ensure the highest standard of care. Your oral health is my priority.
@@ -553,9 +553,9 @@ const Home = () => {
                   <p className="text-gray-700 w-full sm:w-3/4 md:w-2/3 lg:w-1/2 text-sm md:text-base lg:text-sm leading-relaxed mb-4">
                     At Dream Smile, we believe that a confident smile can change lives. Our patients love us because we combine advanced dental technology with a warm, friendly approach that makes every visit comfortable and stress-free. From painless treatments to personalized care, we focus on delivering beautiful results that last.
                   </p>
-                  <button className="bg-black cursor-pointer text-white px-6 sm:px-8 py-3 sm:py-4 text-sm md:text-md lg:text-lg rounded-full hover:bg-gray-800 transition mb-8">
+                  <Link to="/gallery" className="bg-black cursor-pointer text-white px-6 sm:px-8 py-3 sm:py-4 text-sm md:text-md lg:text-lg rounded-full hover:bg-gray-800 transition mb-8">
                     See more reviews
-                  </button>
+                  </Link>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
                   {testimonials.map((item, index) => (
