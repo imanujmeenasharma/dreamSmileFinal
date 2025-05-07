@@ -10,6 +10,7 @@ const Navbar = () => {
             <nav className="h-[10vh] w-full flex items-center justify-between px-5 lg:px-20">
                 <div className="logo w-full lg:w-[20%]">
                     <h1 className="text-lg lg:text-2xl font-medium tracking-tighter">Dream Smile Dental</h1>
+                    <p className="text-xs font-bold leading-none lg:text-base">+1 706-508-4222</p>
                 </div>
 
                 {/* Desktop Menu */}

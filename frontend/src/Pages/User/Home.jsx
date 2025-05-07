@@ -358,7 +358,7 @@ const Home = () => {
             <div className="relative bg-transparent h-[90vh] w-full pt-14 lg:pt-0">
               <div className="z-30 bg-transparent relative h-full w-full flex flex-col md:flex-row items-center gap-6 lg:gap-0">
                 <div className="bg-transparent flex flex-col justify-center w-full md:w-1/2 px-4 sm:px-6 lg:px-20 py-8 md:py-0">
-                  <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tighter leading-tight font-bold mb-4 md:mb-6">
+                  <h1 className="text-4xl leading-none sm:text-5xl md:text-6xl lg:text-7xl tracking-tighter font-bold mb-4 md:mb-6">
                     {images[currentIndex].title}
                   </h1>
                   <p className="text-gray-600 mb-6 md:mb-8 text-sm sm:text-base md:text-lg lg:text-xl">
@@ -523,7 +523,7 @@ const Home = () => {
               <div className="space-y-8">
                 <div className="max-w-full">
                   <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
-                    Why People love Dream Smile
+                  Stories Behind the Smiles
                   </h1>
                   <p className="text-gray-700 w-full sm:w-3/4 md:w-2/3 lg:w-1/2 text-sm md:text-base lg:text-sm leading-relaxed mb-4">
                     At Dream Smile, we believe that a confident smile can change lives. Our patients love us because we combine advanced dental technology with a warm, friendly approach that makes every visit comfortable and stress-free. From painless treatments to personalized care, we focus on delivering beautiful results that last.
@@ -541,7 +541,7 @@ const Home = () => {
                       <video
                         ref={el => videoRefs.current[index] = el}
                         src={item.video}
-                        className="w-full h-[200px] md:h-[250px] lg:h-[300px] object-cover"
+                        className="w-full h-[400px] md:h-[250px] lg:h-[400px] object-cover"
                         onClick={() => handleVideoClick(index)}
                       />
                       <button
