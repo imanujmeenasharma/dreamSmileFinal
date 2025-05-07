@@ -477,7 +477,7 @@ const Home = () => {
             </div>
 
             {/* Services Section */}
-            <div className="container mx-auto px-5 lg:px-20 py-10 lg:py-16">
+            {/* <div className="container mx-auto px-5 lg:px-20 py-10 lg:py-16">
               <div className="flex justify-between items-center mb-8">
                 <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold">
                   What we are offering today
@@ -516,6 +516,31 @@ const Home = () => {
                   </div>
                 ))}
               </div>
+            </div> */}
+
+            {/* Comfortable Treatment Section */}
+            <div className="container mx-auto px-5 lg:px-20 py-16">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-10 lg:mb-16">
+                Comfortable treatment for you
+              </h1>
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+                {comfortableTreatment.map((item, index) => (
+                  <div
+                    key={index}
+                    className="bg-white p-8 rounded-3xl shadow-lg text-center border border-gray-400"
+                  >
+                    <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                      <RiToothFill className="w-8 h-8" />
+                    </div>
+                    <h3 className="text-xl font-medium mb-4">
+                      {item.title}
+                    </h3>
+                    <p className="text-gray-600 text-sm">
+                      {item.description}
+                    </p>
+                  </div>
+                ))}
+              </div>
             </div>
 
             {/* Why People Love Section */}
@@ -523,7 +548,7 @@ const Home = () => {
               <div className="space-y-8">
                 <div className="max-w-full">
                   <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
-                  Stories Behind the Smiles
+                    Stories Behind the Smiles
                   </h1>
                   <p className="text-gray-700 w-full sm:w-3/4 md:w-2/3 lg:w-1/2 text-sm md:text-base lg:text-sm leading-relaxed mb-4">
                     At Dream Smile, we believe that a confident smile can change lives. Our patients love us because we combine advanced dental technology with a warm, friendly approach that makes every visit comfortable and stress-free. From painless treatments to personalized care, we focus on delivering beautiful results that last.
@@ -553,31 +578,6 @@ const Home = () => {
                     </div>
                   ))}
                 </div>
-              </div>
-            </div>
-
-            {/* Comfortable Treatment Section */}
-            <div className="container mx-auto px-5 lg:px-20 py-16">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-10 lg:mb-16">
-                Comfortable treatment for you
-              </h1>
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-                {comfortableTreatment.map((item, index) => (
-                  <div
-                    key={index}
-                    className="bg-white p-8 rounded-3xl shadow-lg text-center border border-gray-400"
-                  >
-                    <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                      <RiToothFill className="w-8 h-8" />
-                    </div>
-                    <h3 className="text-xl font-medium mb-4">
-                      {item.title}
-                    </h3>
-                    <p className="text-gray-600 text-sm">
-                      {item.description}
-                    </p>
-                  </div>
-                ))}
               </div>
             </div>
 
