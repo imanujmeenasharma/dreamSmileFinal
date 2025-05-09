@@ -60,7 +60,7 @@ const Footer = () => {
                         </div>
                     </div>
                     <div className="border-t border-white/10 mt-12 pt-8 text-center text-gray-300 text-sm">
-                        ©2025 Client work done by Rajneesh. All rights reserved.
+                        ©2025 Client work done by Craftix Studio. All rights reserved.
                     </div>
                 </div>
             </footer>

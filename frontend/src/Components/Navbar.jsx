@@ -9,8 +9,8 @@ const Navbar = () => {
         <header className="w-full shadow-sm">
             <nav className="h-[10vh] w-full flex items-center justify-between px-5 lg:px-20">
                 <div className="logo w-full lg:w-[20%]">
-                    <h1 className="text-lg lg:text-2xl font-medium tracking-tighter">Dream Smile Dental</h1>
-                    <p className="text-xs font-bold leading-none lg:text-base">+1 706-508-4222</p>
+                    <h1 className="text-lg lg:text-xl font-medium tracking-tighter">Dental care with gental touch</h1>
+                    <p className="text-xs font-bold leading-none lg:text-base">706-508-4222</p>
                 </div>
 
                 {/* Desktop Menu */}
@@ -23,7 +23,7 @@ const Navbar = () => {
 
                 {/* Contact Button for Desktop */}
                 <div className="hidden lg:flex w-[20%] justify-end">
-                    <a href="tel:+911234567890" className="bg-black text-white px-5 py-2 rounded-full text-sm font-medium">
+                    <a href="tel:706-508-4222" className="bg-black text-white px-5 py-2 rounded-full text-sm font-medium">
                         Contact us
                     </a>
                 </div>

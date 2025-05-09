@@ -56,41 +56,32 @@ function SpecialOffers({ closePopup }) {
           onClick={closePopup}
           className="fixed right-6 top-6 z-50 text-white hover:text-white/80 p-2"
         >
-          <span className="text-4xl bg-black rounded-full h-14 lg:h-20 w-14 lg:w-20 cursor-pointer flex items-center justify-center">
-            <IoMdClose />
-          </span>
+          <span className='text-4xl bg-black rounded-full h-20 w-20 cursor-pointer flex items-center justify-center'><IoMdClose /></span>
         </button>
 
-        <div className="px-10 lg:px-40 mx-auto p-6">
+        <div className="px-40 mx-auto p-6">
           {/* Header Section */}
           <div className="pt-16 space-y-2 text-white mb-12 text-center md:text-left">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-medium pt-5 lg:pt-0">
-              Weekly Special Offers
-            </h1>
-            <p className="text-white/90 mx-auto w-full lg:w-[50%] text-sm sm:text-base md:text-lg">
-              Lorem ipsum dolor sit amet consectetur. In quis enim sit tortor
-              dignissim quis eget elementum. Urna at a ac facilisi. Quisque ut
-              molestie facilisis id rutrum orci ipsum.
+            <h1 className="text-6xl font-medium">Weekly Special Offers</h1>
+            <p className="text-white/90 w-[50vw] text-sm sm:text-base md:text-lg">
+              Lorem ipsum dolor sit amet consectetur. In quis enim sit tortor dignissim quis eget elementum. Urna at a ac facilisi. Quisque ut molestie facilisis id rutrum orci ipsum.
             </p>
           </div>
 
           {/* Date & Timings Section */}
           <div className="space-y-6 text-white mb-12">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-medium">
-              Date & Timings
-            </h2>
-            <div className="flex flex-wrap gap-4 lg:gap-6">
+            <h2 className="text-4xl font-medium">Date & Timings</h2>
+            <div className="flex flex-wrap gap-6">
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 flex items-center gap-4 border border-white/30">
-                <span className="text-xs md:text-lg lg:text-2xl">
-                  Start Date -{" "}
-                  {date.length > 0 && date[0].startdate.split("T")[0]}{" "}
-                </span>
+                <span className="text-2xl">02</span>
+                <span className="text-2xl">—</span>
+                <span className="text-2xl">06</span>
+                <span className="text-2xl px-4">Feb, 2025</span>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 flex items-center gap-4 border border-white/30">
-                <span className="text-xs md:text-lg lg:text-2xl">
-                  End Date -{" "}
-                  {date.length > 0 && date[0].enddate.split("T")[0]}{" "}
-                </span>
+                <span className="text-2xl">11:30 AM</span>
+                <span className="text-2xl">—</span>
+                <span className="text-2xl">05:45 PM</span>
               </div>
             </div>
           </div>
@@ -102,8 +93,8 @@ function SpecialOffers({ closePopup }) {
                 <div className="h-64 p-5">
                   {item.image && (
                     <img
-                      src={urlFor(item.image).url()}
-                      alt={item.title}
+                      src={urlFor(item?.image).url()}
+                      alt={item?.title}
                       className="object-cover w-full rounded-2xl h-full"
                     />
                   )}
@@ -111,8 +102,8 @@ function SpecialOffers({ closePopup }) {
                 <div className="px-6 pb-6">
                   <h3 className="text-2xl font-medium mb-4">{item.title}</h3>
                   <div className="flex gap-2 mb-4">
-                    {item.tags.length > 0 &&
-                      item.tags.map((tag, idx) => (
+                    {item?.tags?.length > 0 &&
+                      item?.tags?.map((tag, idx) => (
                         <span
                           key={idx}
                           className="bg-gray-200 px-3 py-1 rounded-full text-sm"
@@ -125,7 +116,7 @@ function SpecialOffers({ closePopup }) {
                     <p className="font-medium">{item.validDate}</p>
                     <p className="text-gray-600 text-sm">{item.description}</p>
                   </div>
-                  <Link to="/contact" className="w-full cursor-pointer bg-black text-white py-3 rounded-lg mt-6 hover:bg-black/90 transition-colors">
+                  <Link to="/contact" className="w-full block text-center cursor-pointer bg-black text-white py-3 rounded-lg mt-6 hover:bg-black/90 transition-colors">
                     Book An Appointment
                   </Link>
                 </div>
@@ -346,6 +337,7 @@ const Home = () => {
         src="./video.mp4"
         autoPlay
         loop
+        playsInline
         muted
         className="w-full h-full object-cover fixed top-0 left-0 -z-10 opacity-25"
       />
@@ -433,7 +425,7 @@ const Home = () => {
                   <div className="flex md:flex-col justify-between gap-4 w-full lg:w-60">
                     <div className="bg-zinc-300 h-48 lg:w-56 flex px-8 justify-center flex-col w-1/2 rounded-[2.5vw]">
                       <div className="text-7xl font-black tracking-tighter leading-tight">
-                        5+
+                        8+
                       </div>
                       <div className="text-xl text-black-800 tracking-tighter font-light leading-none opacity-90 w-20">
                         Years of Experience
