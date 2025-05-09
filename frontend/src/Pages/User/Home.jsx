@@ -54,43 +54,43 @@ function SpecialOffers({ closePopup }) {
         {/* Close Button */}
         <button
           onClick={closePopup}
-          className="fixed right-6 top-6 z-50 text-white hover:text-white/80 p-2"
+          className="fixed right-4 sm:right-6 top-4 sm:top-6 z-50 text-white hover:text-white/80 p-2"
         >
-          <span className='text-4xl bg-black rounded-full h-20 w-20 cursor-pointer flex items-center justify-center'><IoMdClose /></span>
+          <span className='text-2xl sm:text-4xl bg-black rounded-full h-12 w-12 sm:h-20 sm:w-20 cursor-pointer flex items-center justify-center'><IoMdClose /></span>
         </button>
 
-        <div className="px-40 mx-auto p-6">
+        <div className="px-4 sm:px-8 md:px-16 lg:px-40 mx-auto p-4 sm:p-6">
           {/* Header Section */}
-          <div className="pt-16 space-y-2 text-white mb-12 text-center md:text-left">
-            <h1 className="text-6xl font-medium">Weekly Special Offers</h1>
-            <p className="text-white/90 w-[50vw] text-sm sm:text-base md:text-lg">
+          <div className="pt-16 space-y-2 text-white mb-8 sm:mb-12 text-center md:text-left">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium">Weekly Special Offers</h1>
+            <p className="text-white/90 w-full md:w-[70vw] lg:w-[50vw] text-sm sm:text-base md:text-lg">
               Lorem ipsum dolor sit amet consectetur. In quis enim sit tortor dignissim quis eget elementum. Urna at a ac facilisi. Quisque ut molestie facilisis id rutrum orci ipsum.
             </p>
           </div>
 
           {/* Date & Timings Section */}
-          <div className="space-y-6 text-white mb-12">
-            <h2 className="text-4xl font-medium">Date & Timings</h2>
-            <div className="flex flex-wrap gap-6">
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 flex items-center gap-4 border border-white/30">
-                <span className="text-2xl">02</span>
-                <span className="text-2xl">—</span>
-                <span className="text-2xl">06</span>
-                <span className="text-2xl px-4">Feb, 2025</span>
+          <div className="space-y-4 sm:space-y-6 text-white mb-8 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-medium">Date & Timings</h2>
+            <div className="flex flex-col sm:flex-row flex-wrap gap-4 sm:gap-6">
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4 flex items-center gap-2 sm:gap-4 border border-white/30 text-sm sm:text-base md:text-xl lg:text-2xl">
+                <span>02</span>
+                <span>—</span>
+                <span>06</span>
+                <span className="px-2 sm:px-4">Feb, 2025</span>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 flex items-center gap-4 border border-white/30">
-                <span className="text-2xl">11:30 AM</span>
-                <span className="text-2xl">—</span>
-                <span className="text-2xl">05:45 PM</span>
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4 flex items-center gap-2 sm:gap-4 border border-white/30 text-sm sm:text-base md:text-xl lg:text-2xl">
+                <span>11:30 AM</span>
+                <span>—</span>
+                <span>05:45 PM</span>
               </div>
             </div>
           </div>
 
           {/* Offers Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pb-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 pb-6">
             {models.map((item, index) => (
               <div key={index} className="bg-white rounded-3xl overflow-hidden">
-                <div className="h-64 p-5">
+                <div className="h-48 sm:h-64 p-3 sm:p-5">
                   {item.image && (
                     <img
                       src={urlFor(item?.image).url()}
@@ -99,24 +99,24 @@ function SpecialOffers({ closePopup }) {
                     />
                   )}
                 </div>
-                <div className="px-6 pb-6">
-                  <h3 className="text-2xl font-medium mb-4">{item.title}</h3>
-                  <div className="flex gap-2 mb-4">
+                <div className="px-4 sm:px-6 pb-4 sm:pb-6">
+                  <h3 className="text-xl sm:text-2xl font-medium mb-2 sm:mb-4">{item.title}</h3>
+                  <div className="flex flex-wrap gap-2 mb-3 sm:mb-4">
                     {item?.tags?.length > 0 &&
                       item?.tags?.map((tag, idx) => (
                         <span
                           key={idx}
-                          className="bg-gray-200 px-3 py-1 rounded-full text-sm"
+                          className="bg-gray-200 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm"
                         >
                           {tag}
                         </span>
                       ))}
                   </div>
-                  <div className="space-y-2">
-                    <p className="font-medium">{item.validDate}</p>
-                    <p className="text-gray-600 text-sm">{item.description}</p>
+                  <div className="space-y-1 sm:space-y-2">
+                    <p className="font-medium text-sm sm:text-base">{item.validDate}</p>
+                    <p className="text-gray-600 text-xs sm:text-sm">{item.description}</p>
                   </div>
-                  <Link to="/contact" className="w-full block text-center cursor-pointer bg-black text-white py-3 rounded-lg mt-6 hover:bg-black/90 transition-colors">
+                  <Link to="/contact" className="w-full block text-center cursor-pointer bg-black text-white py-2 sm:py-3 rounded-lg mt-4 sm:mt-6 hover:bg-black/90 transition-colors text-sm sm:text-base">
                     Book An Appointment
                   </Link>
                 </div>
