@@ -49,7 +49,7 @@ const Navbar = () => {
                     <Link to="/about" onClick={() => setMenuOpen(false)} className="text-lg font-medium hover:text-gray-600">About</Link>
                     <Link to="/gallery" onClick={() => setMenuOpen(false)} className="text-lg font-medium hover:text-gray-600">Gallery</Link>
                     <Link to="/contact" onClick={() => setMenuOpen(false)} className="text-lg font-medium hover:text-gray-600">Contact</Link>
-                    <a href="tel:+911234567890" className="bg-black text-white px-5 py-2 rounded-full text-sm font-medium">
+                    <a href="tel:706-508-4222" className="bg-black text-white px-5 py-2 rounded-full text-sm font-medium">
                         Contact us
                     </a>
                 </div>
