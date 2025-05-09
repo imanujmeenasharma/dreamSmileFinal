@@ -259,6 +259,16 @@ const Home = () => {
   }
   ]
 
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (video) {
+      video.play().catch((err) => {
+        console.log("iOS autoplay blocked:", err);
+      });
+    }
+  }, []);
 
   // Auto-slide logic
   useEffect(() => {
@@ -334,11 +344,12 @@ const Home = () => {
     <div className="relative">
       {/* Full-page background video */}
       <video
-        src="./video.mp4"
+        ref={videoRef}
+        src="/video.mp4"
         autoPlay
         loop
-        playsInline
         muted
+        playsInline
         className="w-full h-full object-cover fixed top-0 left-0 -z-10 opacity-25"
       />
 
