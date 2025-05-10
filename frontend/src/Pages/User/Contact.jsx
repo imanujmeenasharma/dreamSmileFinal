@@ -47,7 +47,7 @@ const Contact = () => {
       <div className="bg-white p-8 lg:p-12 flex flex-col justify-center">
         <div className="max-w-md mx-auto w-full">
           <h1 className="text-3xl font-bold mb-2">GET IN TOUCH</h1>
-          <p className="text-gray-600 mb-8">24/7 We will answer your questions and problems</p>
+          <p className="text-gray-600 mb-8">Will get back to you as soon as possible.</p>
 
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid md:grid-cols-2 gap-6">

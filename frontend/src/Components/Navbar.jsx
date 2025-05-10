@@ -9,8 +9,9 @@ const Navbar = () => {
         <header className="w-full shadow-sm">
             <nav className="h-[10vh] w-full flex items-center justify-between px-5 lg:px-20">
                 <div className="logo w-full lg:w-[20%]">
-                    <h1 className="text-lg lg:text-xl font-medium tracking-tighter">Dental care with gental touch</h1>
-                    <p className="text-xs font-bold leading-none lg:text-base">706-508-4222</p>
+                    <h1 className="text-lg lg:text-xl font-medium tracking-tighter leading-none whitespace-nowrap flex items-center gap-2">Dream Smile Dental</h1>
+                    <span className='text-sm leading-none relative bottom-1'>Dental care with gental touch</span>
+                    <a href="tel:706-508-4222" className="text-xs block font-bold leading-none lg:text-base">706-508-4222</a>
                 </div>
 
                 {/* Desktop Menu */}

@@ -64,7 +64,7 @@ function SpecialOffers({ closePopup }) {
           <div className="pt-16 space-y-2 text-white mb-8 sm:mb-12 text-center md:text-left">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium">Weekly Special Offers</h1>
             <p className="text-white/90 w-full md:w-[70vw] lg:w-[50vw] text-sm sm:text-base md:text-lg">
-              Lorem ipsum dolor sit amet consectetur. In quis enim sit tortor dignissim quis eget elementum. Urna at a ac facilisi. Quisque ut molestie facilisis id rutrum orci ipsum.
+              We offer a range of cosmetic dentistry services to enhance your smile and boost your confidence. From teeth whitening to veneers and bonding, we can help you achieve the perfect smile.
             </p>
           </div>
 
@@ -133,6 +133,35 @@ const Home = () => {
   const location = useLocation();
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  const [models, setModels] = useState([]);
+  const [date, setDate] = useState([]);
+  const [todayOffers, setTodayOffers] = useState([]);
+
+  useEffect(() => {
+    const getData = async () => {
+      const data = await fetchMyModels();
+      setModels(data);
+      
+      // Filter offers for today's date
+      const today = new Date().toLocaleDateString();
+      const todaysOffers = data.filter(item => {
+        const offerDate = new Date(item.validDate).toLocaleDateString();
+        return offerDate === today;
+      });
+      setTodayOffers(todaysOffers);
+    };
+
+    const getdatetime = async () => {
+      const data = await datetime();
+      console.log(data);
+      setDate(data);
+    };
+
+    getData();
+    getdatetime();
+  }, []);
+
   const images = [
     {
       src: "./carouselImages/1.JPG",
@@ -140,19 +169,19 @@ const Home = () => {
       desc: "Our team of experienced dentists and hygienists are dedicated to providing you with the highest quality dental care. We are committed to your comfort and satisfaction.",
     },
     {
-      src: "./carouselImages/3.JPG",
+      src: "./carouselImages/4.JPG",
       title: "Advanced Dental Technology",
       desc: "We utilize state-of-the-art dental technology to deliver faster, safer, and more precise treatments. From digital X-rays and intraoral scanners to laser dentistry and 3D imaging.",
     },
     {
-      src: "./carouselImages/4.JPG",
+      src: "./carouselImages/3.JPG",
       title: "Preventive Care & Hygiene",
       desc: "Healthy smiles start with prevention. Our preventive care programs focus on regular cleanings, thorough exams, and personalized oral hygiene guidance to help you avoid dental issues before they begin.",
     },
     {
-      src: "./carouselImages/2.JPG",
-      title: "Smiles Crafted by Certified Professionals",
-      desc: "Our team of experienced dentists and hygienists are dedicated to providing you with the highest quality dental care. We are committed to your comfort and satisfaction.",
+      src: "./carouselImages/6.avif",
+      title: "Before & After Smile Work",
+      desc: "We offer a range of cosmetic dentistry services to enhance your smile and boost your confidence. From teeth whitening to veneers and bonding, we can help you achieve the perfect smile.",
     },
   ];
   const carouselData = [{
@@ -166,7 +195,7 @@ const Home = () => {
     subtitle: "Transform your smile with our cosmetic dentistry solutions.",
   }, {
     image: "https://plus.unsplash.com/premium_photo-1669704098776-1408db9ea894?q=80&w=1976&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    title: "Your Family’s Dental Home",
+    title: "Your Family's Dental Home",
     subtitle: "Personalized care for kids, adults, and seniors under one roof.",
   }, {
     image: "https://plus.unsplash.com/premium_photo-1669703777548-08503c3085a0?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -222,11 +251,11 @@ const Home = () => {
   },
   {
     name: "Maggie Mendez",
-    review: "I had an extraction done at Dream Smile Dental. They were phenomenal! I had the best experience. I’ve lived in Dalton for years and I’ve visited different locations in the area. This one by far has been my favorite. The staff is wonderful and Dr. Kumar is excellent! 10/10!"
+    review: "I had an extraction done at Dream Smile Dental. They were phenomenal! I had the best experience. I've lived in Dalton for years and I've visited different locations in the area. This one by far has been my favorite. The staff is wonderful and Dr. Kumar is excellent! 10/10!"
   },
   {
     name: "Gabriel Waldez",
-    review: "I had a great service even tho I didn’t have an appointment they were more than glad to treat me. I do recommend this place for sure"
+    review: "I had a great service even tho I didn't have an appointment they were more than glad to treat me. I do recommend this place for sure"
   },
   {
     name: "Anne Luna",
@@ -392,6 +421,60 @@ const Home = () => {
                 </div>
               </div>
             </div>
+
+            {/* Services Section */}
+            <div className="container mx-auto px-5 lg:px-20 py-10 lg:py-16">
+              <div className="flex justify-between items-center mb-8">
+                <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold">
+                  Today's Special Offers
+                </h2>
+              </div>
+              
+              {todayOffers.length > 0 ? (
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+                  {todayOffers.map((item, index) => (
+                    <div key={index} className="bg-white rounded-3xl overflow-hidden shadow-md border border-gray-200">
+                      <div className="h-48 sm:h-64 p-3 sm:p-5">
+                        {item.image && (
+                          <img
+                            src={urlFor(item?.image).url()}
+                            alt={item?.title}
+                            className="object-cover w-full rounded-2xl h-full"
+                          />
+                        )}
+                      </div>
+                      <div className="px-4 sm:px-6 pb-4 sm:pb-6">
+                        <h3 className="text-xl sm:text-2xl font-medium mb-2 sm:mb-4">{item.title}</h3>
+                        <div className="flex flex-wrap gap-2 mb-3 sm:mb-4">
+                          {item?.tags?.length > 0 &&
+                            item?.tags?.map((tag, idx) => (
+                              <span
+                                key={idx}
+                                className="bg-gray-200 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm"
+                              >
+                                {tag}
+                              </span>
+                            ))}
+                        </div>
+                        <div className="space-y-1 sm:space-y-2">
+                          <p className="font-medium text-sm sm:text-base">{item.validDate}</p>
+                          <p className="text-gray-600 text-xs sm:text-sm">{item.description}</p>
+                        </div>
+                        <Link to="/contact" className="w-full block text-center cursor-pointer bg-black text-white py-2 sm:py-3 rounded-lg mt-4 sm:mt-6 hover:bg-black/90 transition-colors text-sm sm:text-base">
+                          Book An Appointment
+                        </Link>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <div className="text-center py-10">
+                  <p className="text-xl text-gray-600">No special offers available for today.</p>
+                </div>
+              )}
+            </div>
+
+
             <div className="bg-[#FF9500] py-12 lg:py-16">
               <div className="container mx-auto px-5 lg:px-20">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
@@ -465,7 +548,7 @@ const Home = () => {
                     Dr. Manoj Kumar
                   </h1>
                   <p className="text-base md:text-lg lg:text-xl text-gray-600">
-                    I am a passionate dentist committed to providing personalized dental care with a gentle touch. With years of experience in diagnosing and treating, my goal is not just to relieve pain, but to restore confidence and bring smiles to my patients’ faces.
+                    I am a passionate dentist committed to providing personalized dental care with a gentle touch. With years of experience in diagnosing and treating, my goal is not just to relieve pain, but to restore confidence and bring smiles to my patients' faces.
                   </p>
                   <div>
                     <Link to="/contact" className="bg-black font-medium cursor-pointer text-white inline-block px-10 py-2 rounded-xl hover:bg-gray-800">
@@ -473,53 +556,11 @@ const Home = () => {
                     </Link>
                   </div>
                   <p className="text-sm text-gray-600">
-                    Whether it’s a routine check-up, cosmetic enhancement, or a complex procedure, I strive to make every visit comfortable and ensure the highest standard of care. Your oral health is my priority.
+                    Whether it's a routine check-up, cosmetic enhancement, or a complex procedure, I strive to make every visit comfortable and ensure the highest standard of care. Your oral health is my priority.
                   </p>
                 </div>
               </div>
             </div>
-
-            {/* Services Section */}
-            {/* <div className="container mx-auto px-5 lg:px-20 py-10 lg:py-16">
-              <div className="flex justify-between items-center mb-8">
-                <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold">
-                  What we are offering today
-                </h2>
-                <div className="flex space-x-2">
-                  <button
-                    className="p-4 cursor-pointer rounded-full bg-gray-100 hover:bg-gray-200"
-                    onClick={() => scrollLeft(servicesRef)}
-                  >
-                    <MdChevronLeft className="w-6 h-6" />
-                  </button>
-                  <button
-                    className="p-4 cursor-pointer rounded-full bg-black text-white hover:bg-gray-200"
-                    onClick={() => scrollRight(servicesRef)}
-                  >
-                    <MdChevronRight className="w-6 h-6" />
-                  </button>
-                </div>
-              </div>
-              <div
-                className="flex overflow-x-auto gap-6 pb-6 hide-scroller"
-                ref={servicesRef}
-              >
-                {[1, 2, 3, 4, 5, 6].map((item) => (
-                  <div
-                    key={item}
-                    className="flex-none w-80 bg-gray-100 p-6 rounded-xl aspect-square border border-gray-300 shadow-sm"
-                  >
-                    <div className="w-16 h-16 bg-white rounded-full mb-4"></div>
-                    <h3 className="text-xl font-medium mb-2">
-                      Dental Service {item}
-                    </h3>
-                    <p className="text-gray-600">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div> */}
 
             {/* Comfortable Treatment Section */}
             <div className="container mx-auto px-5 lg:px-20 py-16">
@@ -569,6 +610,7 @@ const Home = () => {
                       <video
                         ref={el => videoRefs.current[index] = el}
                         src={item.video}
+                        playsInline
                         className="w-full h-[400px] md:h-[250px] lg:h-[400px] object-cover"
                         onClick={() => handleVideoClick(index)}
                       />
