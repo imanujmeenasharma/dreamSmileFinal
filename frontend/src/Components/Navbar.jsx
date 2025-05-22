@@ -24,9 +24,9 @@ const Navbar = () => {
 
                 {/* Contact Button for Desktop */}
                 <div className="hidden lg:flex w-[20%] justify-end">
-                    <a href="/contact" className="bg-black text-white px-5 py-2 rounded-full text-sm font-medium">
+                    <Link href="/contact" className="bg-black text-white px-5 py-2 rounded-full text-sm font-medium">
                         Contact us
-                    </a>
+                    </Link>
                 </div>
 
                 {/* Hamburger for Mobile */}
@@ -50,9 +50,9 @@ const Navbar = () => {
                     <Link to="/about" onClick={() => setMenuOpen(false)} className="text-lg font-medium hover:text-gray-600">About</Link>
                     <Link to="/gallery" onClick={() => setMenuOpen(false)} className="text-lg font-medium hover:text-gray-600">Gallery</Link>
                     <Link to="/contact" onClick={() => setMenuOpen(false)} className="text-lg font-medium hover:text-gray-600">Contact</Link>
-                    <a href="/contact" className="bg-black text-white px-5 py-2 rounded-full text-sm font-medium">
+                    <Link href="/contact" className="bg-black text-white px-5 py-2 rounded-full text-sm font-medium">
                         Contact us
-                    </a>
+                    </Link>
                 </div>
             )}
         </header>
