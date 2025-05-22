@@ -6,7 +6,7 @@ const About = () => {
       name: "Dr. Manoj Kumar",
       title: "Lead Dentist",
       description:
-        "With 5 years of experience, Dr. Manoj Kumar specializes in cosmetic dentistry and oral surgery.",
+        "With 8+ years of experience, Dr. Manoj Kumar specializes in cosmetic dentistry and oral surgery.",
       image: "./carouselImages/1.JPG", // Replace with actual image URL
       titleColor: "text-blue-600",
     }
@@ -22,7 +22,7 @@ const About = () => {
               Welcome to Dream Smile Dental
             </h1>
             <p className=" mx-auto text-lg md:text-xl lg:text-2xl text-gray-600 mt-4">
-              Providing exceptional dental care with a gentle touch for over 20
+              Providing exceptional dental care with a gentle touch for over 8+
               years. Your smile is our priority.
             </p>
           </div>

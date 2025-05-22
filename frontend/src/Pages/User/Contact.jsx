@@ -88,7 +88,7 @@ const Contact = () => {
             />
 
             <textarea
-              placeholder="Describe your issue"
+              placeholder="Describe your concern"
               rows={4}
               className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-200 resize-none"
               value={formData.issue}
