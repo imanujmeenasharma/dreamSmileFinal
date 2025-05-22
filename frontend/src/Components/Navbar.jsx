@@ -24,7 +24,7 @@ const Navbar = () => {
 
                 {/* Contact Button for Desktop */}
                 <div className="hidden lg:flex w-[20%] justify-end">
-                    <a href="tel:706-508-4222" className="bg-black text-white px-5 py-2 rounded-full text-sm font-medium">
+                    <a href="/contact" className="bg-black text-white px-5 py-2 rounded-full text-sm font-medium">
                         Contact us
                     </a>
                 </div>
