@@ -7,8 +7,9 @@ const App = () => {
   UseLenis()
   return (
     <div>
-      <ScrollToTop />
-      <Mainroutes/>
+      <h1>Server is temporarily down please contact to the developer</h1>
+      {/* <ScrollToTop />
+      <Mainroutes/> */}
     </div>
   )
 }

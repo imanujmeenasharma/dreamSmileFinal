@@ -11,6 +11,8 @@ function SpecialOffers({ closePopup }) {
   const [models, setModels] = useState([]);
   const [date, setDate] = useState([]);
 
+  console.log(date)
+
   useEffect(() => {
     const getData = async () => {
       const data = await fetchMyModels();
@@ -19,7 +21,6 @@ function SpecialOffers({ closePopup }) {
 
     const getdatetime = async () => {
       const data = await datetime();
-      console.log(data);
       setDate(data);
     };
 
@@ -137,25 +138,28 @@ const Home = () => {
   const [models, setModels] = useState([]);
   const [date, setDate] = useState([]);
   const [todayOffers, setTodayOffers] = useState([]);
-
   useEffect(() => {
     const getData = async () => {
       const data = await fetchMyModels();
       setModels(data);
       
       // Filter offers for today's date
-      const today = new Date().toLocaleDateString();
+      const today = new Date();
       const todaysOffers = data.filter(item => {
-        const offerDate = new Date(item.validDate).toLocaleDateString();
-        return offerDate === today;
+        if (!item.startdate || !item.enddate) return false;
+        
+        const startDate = new Date(item.startdate);
+        const endDate = new Date(item.enddate);
+        
+        return today >= startDate && today <= endDate;
       });
       setTodayOffers(todaysOffers);
     };
 
     const getdatetime = async () => {
       const data = await datetime();
-      console.log(data);
       setDate(data);
+      console.log(data);
     };
 
     getData();
