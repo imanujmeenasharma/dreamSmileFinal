@@ -6,8 +6,8 @@ import ScrollToTop from './Components/ScrollToTop'
 const App = () => {
   UseLenis()
   return (
-    <div>
-      <h1>Server is temporarily down please contact to the developer</h1>
+    <div className="flex items-center justify-center min-h-screen">
+      <h1 className="font-bold text-center">Server is temporarily down please contact to the developer</h1>
       {/* <ScrollToTop />
       <Mainroutes/> */}
     </div>
