@@ -376,15 +376,6 @@ const Home = () => {
   return (
     <div className="relative">
       {/* Full-page background video */}
-      <video
-        ref={videoRef}
-        src="/video.mp4"
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="w-full h-full object-cover fixed top-0 left-0 -z-10 opacity-25"
-      />
 
       {/* Main content */}
       <div className="relative z-10 min-h-screen bg-transparent">
