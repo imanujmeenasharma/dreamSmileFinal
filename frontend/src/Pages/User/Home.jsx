@@ -378,7 +378,7 @@ const Home = () => {
       {/* Full-page background video */}
 
       {/* Main content */}
-      <div className="relative z-10 min-h-screen bg-transparent">
+      <div className="relative z-10 min-h-screen bg-transparent w-full">
         {location.pathname === "/" && (
           <>
             {/* Hero Section */}
@@ -622,7 +622,7 @@ const Home = () => {
             </div>
 
             {/* Reviews Section */}
-            <div className="container mx-auto px-5 lg:px-20 py-16">
+            <div className="px-5 lg:px-20 h-fit w-[100vw] overflow-x-hidden py-16">
               <div className="flex justify-between items-center mb-8">
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold">
                   150+ Reviews Reviews
@@ -643,7 +643,7 @@ const Home = () => {
                 </div>
               </div>
               <div
-                className="flex overflow-x-auto hide-scroller gap-6 pb-6 scrollbar-hide"
+                className="flex overflow-x-scroll hide-scroller gap-6 pb-6"
                 ref={reviewsRef}
               >
                 {reviews.map((item, index) => (
